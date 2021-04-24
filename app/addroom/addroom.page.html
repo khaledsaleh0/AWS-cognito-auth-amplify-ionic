@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{'add_rooms' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-row>
+       
+        <!--        new edit room-->
+        <ion-col size="12">
+            <div class="items-box" style="background-image: url()">
+            <form [formGroup]="addroom" (ngSubmit)="addRoom()">
+                <ion-input item-start type="text" formControlName="title" placeholder="{{'enter_room_name' | translate}}"></ion-input>
+                <ion-row class="ion-align-items-center">
+                    <ion-col size="3">
+                        <div class="click-icon">
+                            <ion-icon name="logo-buffer"></ion-icon>
+                        </div>
+                    </ion-col>
+                    <ion-col size="3">
+                        <div class="btn-box">
+                           <button ion-button type="submit" [disabled]="!addroom.valid"><ion-icon name="arrow-forward-circle-outline"></ion-icon></button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                </form>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>
+<ion-footer>
+    <ion-row>
+        <ion-col size="4" offset="4">
+            <div class="btn-box">
+                <button (click)="setup()">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-footer>

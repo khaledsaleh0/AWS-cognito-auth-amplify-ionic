@@ -1,0 +1,328 @@
+
+subscription OnCreateRoom {
+  onCreateRoom {
+    id
+    name
+    devices {
+      items {
+        id
+        name
+        type
+        roomID
+        room {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        alarms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateRoom {
+  onUpdateRoom {
+    id
+    name
+    devices {
+      items {
+        id
+        name
+        type
+        roomID
+        room {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        alarms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteRoom {
+  onDeleteRoom {
+    id
+    name
+    devices {
+      items {
+        id
+        name
+        type
+        roomID
+        room {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        alarms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateDevice {
+  onCreateDevice {
+    id
+    name
+    type
+    roomID
+    room {
+      id
+      name
+      devices {
+        items {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    alarms {
+      items {
+        id
+        deviceID
+        device {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateDevice {
+  onUpdateDevice {
+    id
+    name
+    type
+    roomID
+    room {
+      id
+      name
+      devices {
+        items {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    alarms {
+      items {
+        id
+        deviceID
+        device {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteDevice {
+  onDeleteDevice {
+    id
+    name
+    type
+    roomID
+    room {
+      id
+      name
+      devices {
+        items {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    alarms {
+      items {
+        id
+        deviceID
+        device {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateAlarm {
+  onCreateAlarm {
+    id
+    deviceID
+    device {
+      id
+      name
+      type
+      roomID
+      room {
+        id
+        name
+        devices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      alarms {
+        items {
+          id
+          deviceID
+          name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateAlarm {
+  onUpdateAlarm {
+    id
+    deviceID
+    device {
+      id
+      name
+      type
+      roomID
+      room {
+        id
+        name
+        devices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      alarms {
+        items {
+          id
+          deviceID
+          name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteAlarm {
+  onDeleteAlarm {
+    id
+    deviceID
+    device {
+      id
+      name
+      type
+      roomID
+      room {
+        id
+        name
+        devices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      alarms {
+        items {
+          id
+          deviceID
+          name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    createdAt
+    updatedAt
+  }
+}

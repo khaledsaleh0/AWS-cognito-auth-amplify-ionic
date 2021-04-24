@@ -1,0 +1,57 @@
+<ion-content fullscreen>
+
+    <div class="logo-box">
+        <img src="assets/imgs/logo.png" class="">
+    </div>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>{{'sign_in' | translate}}
+                <small>{{'sign_in_to_your_account' | translate}}</small>
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+<form #loginForm="ngForm" (ngSubmit)="signIn()" autocomplete="off">
+    <div class="form">
+        <ion-list>
+            <ion-item class="ion-no-padding">
+                <ion-label position="floating">{{'email_address' | translate}}</ion-label>
+                <ion-input type="text" name="username" id="loginField" required [(ngModel)]="username" #email></ion-input>
+            </ion-item>
+            <ion-item class="ion-no-padding">
+                <ion-label position="floating">{{'password' | translate}}</ion-label>
+                <ion-input type="password" name="password" id="passwordField" required [(ngModel)]="password"></ion-input>
+            </ion-item>
+        </ion-list>
+        
+        <ion-row class="ion-align-items-center">
+      <ion-col>
+        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        <button ion-button class="submit-btn" full type="submit"
+                [disabled]="!loginForm.form.valid">Login
+        </button>
+      </ion-col>
+    </ion-row>
+    </div>
+    
+</form>
+    <div class="btn-box">
+        <ion-row class="ion-align-items-center">
+         <ion-col size="4" text-right>
+                <p (click)="signup()">
+                    {{'new_user' | translate}}
+                    <strong> {{'register_now' | translate}}</strong>
+                </p>
+            </ion-col>
+            <ion-col size="4" text-right>
+            </ion-col>
+            <ion-col size="4" class="ion-text-end">
+                <p (click)="forgotpassword()">
+                    {{'forgot?' | translate}}
+                    <strong>{{'reset_password_here' | translate}}  </strong>
+                </p>
+            </ion-col>
+        </ion-row>
+        
+    </div>
+</ion-content>

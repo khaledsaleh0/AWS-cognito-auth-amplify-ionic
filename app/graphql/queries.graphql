@@ -1,0 +1,205 @@
+
+query GetRoom($id: ID!) {
+  getRoom(id: $id) {
+    id
+    name
+    devices {
+      items {
+        id
+        name
+        type
+        roomID
+        room {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        alarms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListRooms(
+  $filter: ModelRoomFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listRooms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      devices {
+        items {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetDevice($id: ID!) {
+  getDevice(id: $id) {
+    id
+    name
+    type
+    roomID
+    room {
+      id
+      name
+      devices {
+        items {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    alarms {
+      items {
+        id
+        deviceID
+        device {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListDevices(
+  $filter: ModelDeviceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDevices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      type
+      roomID
+      room {
+        id
+        name
+        devices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      alarms {
+        items {
+          id
+          deviceID
+          name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetAlarm($id: ID!) {
+  getAlarm(id: $id) {
+    id
+    deviceID
+    device {
+      id
+      name
+      type
+      roomID
+      room {
+        id
+        name
+        devices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      alarms {
+        items {
+          id
+          deviceID
+          name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    createdAt
+    updatedAt
+  }
+}
+query ListAlarms(
+  $filter: ModelAlarmFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAlarms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      deviceID
+      device {
+        id
+        name
+        type
+        roomID
+        room {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        alarms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      name
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

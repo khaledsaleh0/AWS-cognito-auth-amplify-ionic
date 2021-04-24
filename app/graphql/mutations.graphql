@@ -1,0 +1,355 @@
+
+mutation CreateRoom(
+  $input: CreateRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  createRoom(input: $input, condition: $condition) {
+    id
+    name
+    devices {
+      items {
+        id
+        name
+        type
+        roomID
+        room {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        alarms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateRoom(
+  $input: UpdateRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  updateRoom(input: $input, condition: $condition) {
+    id
+    name
+    devices {
+      items {
+        id
+        name
+        type
+        roomID
+        room {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        alarms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteRoom(
+  $input: DeleteRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  deleteRoom(input: $input, condition: $condition) {
+    id
+    name
+    devices {
+      items {
+        id
+        name
+        type
+        roomID
+        room {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        alarms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateDevice(
+  $input: CreateDeviceInput!
+  $condition: ModelDeviceConditionInput
+) {
+  createDevice(input: $input, condition: $condition) {
+    id
+    name
+    type
+    roomID
+    room {
+      id
+      name
+      devices {
+        items {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    alarms {
+      items {
+        id
+        deviceID
+        device {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateDevice(
+  $input: UpdateDeviceInput!
+  $condition: ModelDeviceConditionInput
+) {
+  updateDevice(input: $input, condition: $condition) {
+    id
+    name
+    type
+    roomID
+    room {
+      id
+      name
+      devices {
+        items {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    alarms {
+      items {
+        id
+        deviceID
+        device {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteDevice(
+  $input: DeleteDeviceInput!
+  $condition: ModelDeviceConditionInput
+) {
+  deleteDevice(input: $input, condition: $condition) {
+    id
+    name
+    type
+    roomID
+    room {
+      id
+      name
+      devices {
+        items {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    alarms {
+      items {
+        id
+        deviceID
+        device {
+          id
+          name
+          type
+          roomID
+          createdAt
+          updatedAt
+        }
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateAlarm(
+  $input: CreateAlarmInput!
+  $condition: ModelAlarmConditionInput
+) {
+  createAlarm(input: $input, condition: $condition) {
+    id
+    deviceID
+    device {
+      id
+      name
+      type
+      roomID
+      room {
+        id
+        name
+        devices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      alarms {
+        items {
+          id
+          deviceID
+          name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateAlarm(
+  $input: UpdateAlarmInput!
+  $condition: ModelAlarmConditionInput
+) {
+  updateAlarm(input: $input, condition: $condition) {
+    id
+    deviceID
+    device {
+      id
+      name
+      type
+      roomID
+      room {
+        id
+        name
+        devices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      alarms {
+        items {
+          id
+          deviceID
+          name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteAlarm(
+  $input: DeleteAlarmInput!
+  $condition: ModelAlarmConditionInput
+) {
+  deleteAlarm(input: $input, condition: $condition) {
+    id
+    deviceID
+    device {
+      id
+      name
+      type
+      roomID
+      room {
+        id
+        name
+        devices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      alarms {
+        items {
+          id
+          deviceID
+          name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    createdAt
+    updatedAt
+  }
+}
